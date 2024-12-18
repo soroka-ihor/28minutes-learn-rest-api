@@ -1,4 +1,4 @@
-package in.twentyeight.minutes.demorestapi;
+package in.twentyeight.minutes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

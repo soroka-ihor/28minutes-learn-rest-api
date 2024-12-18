@@ -1,4 +1,4 @@
-package in.twentyeight.minutes.demorestapi;
+package in.twentyeight.minutes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
