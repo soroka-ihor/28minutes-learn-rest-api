@@ -1,6 +1,8 @@
 package in.twentyeight.minutes.component.user.service;
 
 import in.twentyeight.minutes.component.user.model.User;
+import in.twentyeight.minutes.exception.UserNotFoundException;
+import org.springframework.jmx.export.notification.UnableToSendNotificationException;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -23,7 +25,9 @@ public class UserDaoService {
 
     public User findOne(int id) {
         Predicate<? super User> predicate = user -> user.getId().equals(id);
-        return users.stream().filter(predicate).findFirst().get();
+        return users.stream().filter(predicate).findFirst().orElseThrow(
+                () -> new UserNotFoundException()
+        );
     }
 
     public List<User> findAll() {
